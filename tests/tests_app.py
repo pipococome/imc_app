@@ -1,8 +1,8 @@
 from app import calcular_imc, classificar_imc
+import pytest
 
 def test_calcular_imc():
-    imc = calcular_imc(70, 1.75)
-    assert round(imc, 2) == 22.86  # IMC esperado para peso 70kg e altura 1.75m
+    assert calcular_imc(70, 1.75) == pytest.approx(22.86, rel=1e-2)  # Compara com tolerância
 
 def test_classificar_imc():
     assert classificar_imc(22.86) == "Peso normal"
