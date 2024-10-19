@@ -20,5 +20,8 @@ def main():
     classificacao = classificar_imc(imc)
     print(f"Seu IMC é: {imc:.2f} - {classificacao}")
 
+    # Adiciona uma linha para evitar que a janela feche imediatamente
+    input("Pressione Enter para sair...")
+
 if __name__ == "__main__":
     main()
